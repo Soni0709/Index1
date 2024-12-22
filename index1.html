@@ -1,0 +1,1003 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Assessment Checklist Form</title>
+</head>
+
+<body class="bg-gray-100 font-sans">
+    <div class="container mx-auto p-4">
+        <form id="dataForm">
+    <!-- Header Section -->
+    <div id="section5" class="section bg-white p-6 rounded shadow-md mb-4" style="display: block;">
+        <h2 class="text-3xl font-bold mb-6 text-black-600">Human Resource for Health</h2>
+        <!-- <span class="text-sm text-red-500">5/8</span> -->
+        <p class="text-sm text-red-500 mb-4">* indicates a required question</p>
+
+    <!-- Main Content -->
+    <div class="container mx-auto p-6">
+        <!-- Obstetrician Section -->
+        <div class="bg-white p-4 rounded-lg shadow-md mb-6">
+            <h3 class="text-2xl font-semibold text-blue-600 mb-4">Obstetrician and Gynecologist</h3>
+
+            <div class="mb-6 flex items-center justify-between">
+                <label for="Regular" class="w-1/5 block text-gray-700 text-lg font-semibold">Regular</label>
+                <div class="flex space-x-4">
+                    <div class="relative">
+                        <input
+                            type="number"
+                            id="regular-sanctioned"
+                            class="peer w-48 px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                            placeholder=" "
+                            required>
+                        <label
+                            for="regular-sanctioned"
+                            class="absolute left-3 -top-2 text-sm text-gray-600 bg-white px-1 transition-all peer-placeholder-shown:top-2 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-focus:-top-2 peer-focus:text-sm peer-focus:text-gray-600">
+                            Sanctioned
+                        </label>
+                    </div>
+                    <div class="relative">
+                        <input
+                            type="number"
+                            id="regular-available"
+                            class="peer w-48 px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                            placeholder=" "
+                            required>
+                        <label
+                            for="regular-available"
+                            class="absolute left-3 -top-2 text-sm text-gray-600 bg-white px-1 transition-all peer-placeholder-shown:top-2 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-focus:-top-2 peer-focus:text-sm peer-focus:text-gray-600">
+                            Available
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mb-6 flex items-center justify-between">
+                <label for="Contractual" class="w-1/5 block text-gray-700 text-lg font-semibold">Contractual</label>
+                <div class="flex space-x-4">
+                    <div class="relative">
+                        <input
+                            type="number"
+                            id="contractual-sanctioned"
+                            class="peer w-48 px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                            placeholder=" "
+                            required>
+                        <label
+                            for="contractual-sanctioned"
+                            class="absolute left-3 -top-2 text-sm text-gray-600 bg-white px-1 transition-all peer-placeholder-shown:top-2 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-focus:-top-2 peer-focus:text-sm peer-focus:text-gray-600">
+                            Sanctioned
+                        </label>
+                    </div>
+                    <div class="relative">
+                        <input
+                            type="number"
+                            id="contractual-available"
+                            class="peer w-48 px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                            placeholder=" "
+                            required>
+                        <label
+                            for="contractual-available"
+                            class="absolute left-3 -top-2 text-sm text-gray-600 bg-white px-1 transition-all peer-placeholder-shown:top-2 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-focus:-top-2 peer-focus:text-sm peer-focus:text-gray-600">
+                            Available
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Anesthetist Section -->
+        <div class="bg-white p-4 rounded-lg shadow-md mb-6">
+            <h3 class="text-2xl font-semibold text-blue-600 mb-4">Anesthetist</h3>
+
+            <div class="mb-6 flex items-center justify-between">
+                <label for="Regular" class="w-1/5 block text-gray-700 text-lg font-semibold">Regular</label>
+                <div class="flex space-x-4">
+                    <div class="relative">
+                        <input
+                            type="number"
+                            id="regular-anesthetist-sanctioned"
+                            class="peer w-48 px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                            placeholder=" "
+                            required>
+                        <label
+                            for="regular-anesthetist-sanctioned"
+                            class="absolute left-3 -top-2 text-sm text-gray-600 bg-white px-1 transition-all peer-placeholder-shown:top-2 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-focus:-top-2 peer-focus:text-sm peer-focus:text-gray-600">
+                            Sanctioned
+                        </label>
+                    </div>
+                    <div class="relative">
+                        <input
+                            type="number"
+                            id="regular-anesthetist-available"
+                            class="peer w-48 px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                            placeholder=" "
+                            required>
+                        <label
+                            for="regular-anesthetist-available"
+                            class="absolute left-3 -top-2 text-sm text-gray-600 bg-white px-1 transition-all peer-placeholder-shown:top-2 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-focus:-top-2 peer-focus:text-sm peer-focus:text-gray-600">
+                            Available
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mb-6 flex items-center justify-between">
+                <label for="Contractual" class="w-1/5 block text-gray-700 text-lg font-semibold">Contractual</label>
+                <div class="flex space-x-4">
+                    <div class="relative">
+                        <input
+                            type="number"
+                            id="contractual-anesthetist-sanctioned"
+                            class="peer w-48 px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                            placeholder=" "
+                            required>
+                        <label
+                            for="contractual-anesthetist-sanctioned"
+                            class="absolute left-3 -top-2 text-sm text-gray-600 bg-white px-1 transition-all peer-placeholder-shown:top-2 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-focus:-top-2 peer-focus:text-sm peer-focus:text-gray-600">
+                            Sanctioned
+                        </label>
+                    </div>
+                    <div class="relative">
+                        <input
+                            type="number"
+                            id="contractual-anesthetist-available"
+                            class="peer w-48 px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                            placeholder=" "
+                            required>
+                        <label
+                            for="contractual-anesthetist-available"
+                            class="absolute left-3 -top-2 text-sm text-gray-600 bg-white px-1 transition-all peer-placeholder-shown:top-2 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-focus:-top-2 peer-focus:text-sm peer-focus:text-gray-600">
+                            Available
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    <!-- Pediatrician Section -->
+    <div class="bg-white p-4 rounded-lg shadow-md mb-6">
+        <h3 class="text-2xl font-semibold text-blue-600 mb-4">Pediatrician</h3>
+
+        <div class="mb-6 flex items-center justify-between">
+            <label for="Regular" class="w-1/5 block text-gray-700 text-lg font-semibold">Regular</label>
+            <div class="flex space-x-4">
+                <div class="relative">
+                    <input
+                        type="number"
+                        id="regular-Pediatrician-sanctioned"
+                        class="peer w-48 px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                        placeholder=" "
+                        required>
+                    <label
+                        for="regular-Pediatrician-sanctioned"
+                        class="absolute left-3 -top-2 text-sm text-gray-600 bg-white px-1 transition-all peer-placeholder-shown:top-2 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-focus:-top-2 peer-focus:text-sm peer-focus:text-gray-600">
+                        Sanctioned
+                    </label>
+                </div>
+                <div class="relative">
+                    <input
+                        type="number"
+                        id="regular-Pediatrician-available"
+                        class="peer w-48 px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                        placeholder=" "
+                        required>
+                    <label
+                        for="regular-Pediatrician-available"
+                        class="absolute left-3 -top-2 text-sm text-gray-600 bg-white px-1 transition-all peer-placeholder-shown:top-2 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-focus:-top-2 peer-focus:text-sm peer-focus:text-gray-600">
+                        Available
+                    </label>
+                </div>
+            </div>
+        </div>
+
+        <div class="mb-6 flex items-center justify-between">
+            <label for="Contractual" class="w-1/5 block text-gray-700 text-lg font-semibold">Contractual</label>
+            <div class="flex space-x-4">
+                <div class="relative">
+                    <input
+                        type="number"
+                        id="contractual-Pediatrician-sanctioned"
+                        class="peer w-48 px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                        placeholder=" "
+                        required>
+                    <label
+                        for="contractual-Pediatrician-sanctioned"
+                        class="absolute left-3 -top-2 text-sm text-gray-600 bg-white px-1 transition-all peer-placeholder-shown:top-2 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-focus:-top-2 peer-focus:text-sm peer-focus:text-gray-600">
+                        Sanctioned
+                    </label>
+                </div>
+                <div class="relative">
+                    <input
+                        type="number"
+                        id="contractual-Pediatrician-available"
+                        class="peer w-48 px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                        placeholder=" "
+                        required>
+                    <label
+                        for="contractual-Pediatrician-available"
+                        class="absolute left-3 -top-2 text-sm text-gray-600 bg-white px-1 transition-all peer-placeholder-shown:top-2 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-focus:-top-2 peer-focus:text-sm peer-focus:text-gray-600">
+                        Available
+                    </label>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- General Surgeon Section -->
+    <div class="bg-white p-4 rounded-lg shadow-md mb-6">
+     <h3 class="text-2xl font-semibold text-blue-600 mb-4">General Surgeon</h3>
+
+     <div class="mb-6 flex items-center justify-between">
+        <label for="Regular" class="w-1/5 block text-gray-700 text-lg font-semibold">Regular</label>
+        <div class="flex space-x-4">
+            <div class="relative">
+                <input
+                    type="number"
+                    id="regular-GeneralSurgeon-sanctioned"
+                    class="peer w-48 px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    placeholder=" "
+                    required>
+                <label
+                    for="regular-GeneralSurgeon-sanctioned"
+                    class="absolute left-3 -top-2 text-sm text-gray-600 bg-white px-1 transition-all peer-placeholder-shown:top-2 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-focus:-top-2 peer-focus:text-sm peer-focus:text-gray-600">
+                    Sanctioned
+                </label>
+            </div>
+            <div class="relative">
+                <input
+                    type="number"
+                    id="regular-GeneralSurgeon-available"
+                    class="peer w-48 px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    placeholder=" "
+                    required>
+                <label
+                    for="regular-GeneralSurgeon-available"
+                    class="absolute left-3 -top-2 text-sm text-gray-600 bg-white px-1 transition-all peer-placeholder-shown:top-2 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-focus:-top-2 peer-focus:text-sm peer-focus:text-gray-600">
+                    Available
+                </label>
+            </div>
+        </div>
+     </div>
+
+     <div class="mb-6 flex items-center justify-between">
+        <label for="Contractual" class="w-1/5 block text-gray-700 text-lg font-semibold">Contractual</label>
+        <div class="flex space-x-4">
+            <div class="relative">
+                <input
+                    type="number"
+                    id="contractual-GeneralSurgeon-sanctioned"
+                    class="peer w-48 px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    placeholder=" "
+                    required>
+                <label
+                    for="contractual-GeneralSurgeon-sanctioned"
+                    class="absolute left-3 -top-2 text-sm text-gray-600 bg-white px-1 transition-all peer-placeholder-shown:top-2 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-focus:-top-2 peer-focus:text-sm peer-focus:text-gray-600">
+                    Sanctioned
+                </label>
+            </div>
+            <div class="relative">
+                <input
+                    type="number"
+                    id="contractual-GeneralSurgeon-available"
+                    class="peer w-48 px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    placeholder=" "
+                    required>
+                <label
+                    for="contractual-GeneralSurgeon-available"
+                    class="absolute left-3 -top-2 text-sm text-gray-600 bg-white px-1 transition-all peer-placeholder-shown:top-2 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-focus:-top-2 peer-focus:text-sm peer-focus:text-gray-600">
+                    Available
+                </label>
+            </div>
+        </div>
+      </div>
+   </div>
+
+    <!-- General Medicine Section -->
+<div class="bg-white p-4 rounded-lg shadow-md mb-6">
+    <h3 class="text-2xl font-semibold text-blue-600 mb-4">General Medicine</h3>
+
+    <div class="mb-6 flex items-center justify-between">
+        <label for="Regular" class="w-1/5 block text-gray-700 text-lg font-semibold">Regular</label>
+        <div class="flex space-x-4">
+            <div class="relative">
+                <input
+                    type="number"
+                    id="regular-GeneralMedicine-sanctioned"
+                    class="peer w-48 px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    placeholder=" "
+                    required>
+                <label
+                    for="regular-GeneralMedicine-sanctioned"
+                    class="absolute left-3 -top-2 text-sm text-gray-600 bg-white px-1 transition-all peer-placeholder-shown:top-2 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-focus:-top-2 peer-focus:text-sm peer-focus:text-gray-600">
+                    Sanctioned
+                </label>
+            </div>
+            <div class="relative">
+                <input
+                    type="number"
+                    id="regular-GeneralMedicine-available"
+                    class="peer w-48 px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    placeholder=" "
+                    required>
+                <label
+                    for="regular-GeneralMedicine-available"
+                    class="absolute left-3 -top-2 text-sm text-gray-600 bg-white px-1 transition-all peer-placeholder-shown:top-2 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-focus:-top-2 peer-focus:text-sm peer-focus:text-gray-600">
+                    Available
+                </label>
+            </div>
+        </div>
+    </div>
+
+    <div class="mb-6 flex items-center justify-between">
+        <label for="Contractual" class="w-1/5 block text-gray-700 text-lg font-semibold">Contractual</label>
+        <div class="flex space-x-4">
+            <div class="relative">
+                <input
+                    type="number"
+                    id="contractual-GeneralMedicine-sanctioned"
+                    class="peer w-48 px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    placeholder=" "
+                    required>
+                <label
+                    for="contractual-GeneralMedicine-sanctioned"
+                    class="absolute left-3 -top-2 text-sm text-gray-600 bg-white px-1 transition-all peer-placeholder-shown:top-2 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-focus:-top-2 peer-focus:text-sm peer-focus:text-gray-600">
+                    Sanctioned
+                </label>
+            </div>
+            <div class="relative">
+                <input
+                    type="number"
+                    id="contractual-GeneralMedicine-available"
+                    class="peer w-48 px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    placeholder=" "
+                    required>
+                <label
+                    for="contractual-GeneralMedicine-available"
+                    class="absolute left-3 -top-2 text-sm text-gray-600 bg-white px-1 transition-all peer-placeholder-shown:top-2 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-focus:-top-2 peer-focus:text-sm peer-focus:text-gray-600">
+                    Available
+                </label>
+            </div>
+        </div>
+    </div>
+</div>
+     <!-- Medical Officers (GDMO) Section -->
+<div class="bg-white p-4 rounded-lg shadow-md mb-6">
+    <h3 class="text-2xl font-semibold text-blue-600 mb-4">Medical Officers (GDMO)</h3>
+
+    <div class="mb-6 flex items-center justify-between">
+        <label for="Regular" class="w-1/5 block text-gray-700 text-lg font-semibold">Regular</label>
+        <div class="flex space-x-4">
+            <div class="relative">
+                <input
+                    type="number"
+                    id="regular-MedicalOfficersGDMO-sanctioned"
+                    class="peer w-48 px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    placeholder=" "
+                    required>
+                <label
+                    for="regular-MedicalOfficersGDMO-sanctioned"
+                    class="absolute left-3 -top-2 text-sm text-gray-600 bg-white px-1 transition-all peer-placeholder-shown:top-2 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-focus:-top-2 peer-focus:text-sm peer-focus:text-gray-600">
+                    Sanctioned
+                </label>
+            </div>
+            <div class="relative">
+                <input
+                    type="number"
+                    id="regular-MedicalOfficersGDMO-available"
+                    class="peer w-48 px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    placeholder=" "
+                    required>
+                <label
+                    for="regular-MedicalOfficersGDMO-available"
+                    class="absolute left-3 -top-2 text-sm text-gray-600 bg-white px-1 transition-all peer-placeholder-shown:top-2 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-focus:-top-2 peer-focus:text-sm peer-focus:text-gray-600">
+                    Available
+                </label>
+            </div>
+        </div>
+    </div>
+
+    <div class="mb-6 flex items-center justify-between">
+        <label for="Contractual" class="w-1/5 block text-gray-700 text-lg font-semibold">Contractual</label>
+        <div class="flex space-x-4">
+            <div class="relative">
+                <input
+                    type="number"
+                    id="contractual-MedicalOfficersGDMO-sanctioned"
+                    class="peer w-48 px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    placeholder=" "
+                    required>
+                <label
+                    for="contractual-MedicalOfficersGDMO-sanctioned"
+                    class="absolute left-3 -top-2 text-sm text-gray-600 bg-white px-1 transition-all peer-placeholder-shown:top-2 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-focus:-top-2 peer-focus:text-sm peer-focus:text-gray-600">
+                    Sanctioned
+                </label>
+            </div>
+            <div class="relative">
+                <input
+                    type="number"
+                    id="contractual-MedicalOfficersGDMO-available"
+                    class="peer w-48 px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    placeholder=" "
+                    required>
+                <label
+                    for="contractual-MedicalOfficersGDMO-available"
+                    class="absolute left-3 -top-2 text-sm text-gray-600 bg-white px-1 transition-all peer-placeholder-shown:top-2 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-focus:-top-2 peer-focus:text-sm peer-focus:text-gray-600">
+                    Available
+                </label>
+            </div>
+        </div>
+    </div>
+</div>
+    <!-- Community Health Officers (CHO) Section -->
+<div class="bg-white p-4 rounded-lg shadow-md mb-6">
+    <h3 class="text-2xl font-semibold text-blue-600 mb-4">Community Health Officers (CHO)</h3>
+
+    <div class="mb-6 flex items-center justify-between">
+        <label for="Regular" class="w-1/5 block text-gray-700 text-lg font-semibold">Regular</label>
+        <div class="flex space-x-4">
+            <div class="relative">
+                <input
+                    type="number"
+                    id="regular-CHO-sanctioned"
+                    class="peer w-48 px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    placeholder=" "
+                    required>
+                <label
+                    for="regular-CHO-sanctioned"
+                    class="absolute left-3 -top-2 text-sm text-gray-600 bg-white px-1 transition-all peer-placeholder-shown:top-2 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-focus:-top-2 peer-focus:text-sm peer-focus:text-gray-600">
+                    Sanctioned
+                </label>
+            </div>
+            <div class="relative">
+                <input
+                    type="number"
+                    id="regular-CHO-available"
+                    class="peer w-48 px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    placeholder=" "
+                    required>
+                <label
+                    for="regular-CHO-available"
+                    class="absolute left-3 -top-2 text-sm text-gray-600 bg-white px-1 transition-all peer-placeholder-shown:top-2 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-focus:-top-2 peer-focus:text-sm peer-focus:text-gray-600">
+                    Available
+                </label>
+            </div>
+        </div>
+    </div>
+
+    <div class="mb-6 flex items-center justify-between">
+        <label for="Contractual" class="w-1/5 block text-gray-700 text-lg font-semibold">Contractual</label>
+        <div class="flex space-x-4">
+            <div class="relative">
+                <input
+                    type="number"
+                    id="contractual-CHO-sanctioned"
+                    class="peer w-48 px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    placeholder=" "
+                    required>
+                <label
+                    for="contractual-CHO-sanctioned"
+                    class="absolute left-3 -top-2 text-sm text-gray-600 bg-white px-1 transition-all peer-placeholder-shown:top-2 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-focus:-top-2 peer-focus:text-sm peer-focus:text-gray-600">
+                    Sanctioned
+                </label>
+            </div>
+            <div class="relative">
+                <input
+                    type="number"
+                    id="contractual-CHO-available"
+                    class="peer w-48 px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    placeholder=" "
+                    required>
+                <label
+                    for="contractual-CHO-available"
+                    class="absolute left-3 -top-2 text-sm text-gray-600 bg-white px-1 transition-all peer-placeholder-shown:top-2 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-focus:-top-2 peer-focus:text-sm peer-focus:text-gray-600">
+                    Available
+                </label>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Pharmacist Section -->
+<div class="bg-white p-4 rounded-lg shadow-md mb-6">
+    <h3 class="text-2xl font-semibold text-blue-600 mb-4">Pharmacist</h3>
+
+    <div class="mb-6 flex items-center justify-between">
+        <label for="Regular" class="w-1/5 block text-gray-700 text-lg font-semibold">Regular</label>
+        <div class="flex space-x-4">
+            <div class="relative">
+                <input
+                    type="number"
+                    id="regular-Pharmacist-sanctioned"
+                    class="peer w-48 px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    placeholder=" "
+                    required>
+                <label
+                    for="regular-Pharmacist-sanctioned"
+                    class="absolute left-3 -top-2 text-sm text-gray-600 bg-white px-1 transition-all peer-placeholder-shown:top-2 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-focus:-top-2 peer-focus:text-sm peer-focus:text-gray-600">
+                    Sanctioned
+                </label>
+            </div>
+            <div class="relative">
+                <input
+                    type="number"
+                    id="regular-Pharmacist-available"
+                    class="peer w-48 px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    placeholder=" "
+                    required>
+                <label
+                    for="regular-Pharmacist-available"
+                    class="absolute left-3 -top-2 text-sm text-gray-600 bg-white px-1 transition-all peer-placeholder-shown:top-2 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-focus:-top-2 peer-focus:text-sm peer-focus:text-gray-600">
+                    Available
+                </label>
+            </div>
+        </div>
+    </div>
+
+    <div class="mb-6 flex items-center justify-between">
+        <label for="Contractual" class="w-1/5 block text-gray-700 text-lg font-semibold">Contractual</label>
+        <div class="flex space-x-4">
+            <div class="relative">
+                <input
+                    type="number"
+                    id="contractual-Pharmacist-sanctioned"
+                    class="peer w-48 px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    placeholder=" "
+                    required>
+                <label
+                    for="contractual-Pharmacist-sanctioned"
+                    class="absolute left-3 -top-2 text-sm text-gray-600 bg-white px-1 transition-all peer-placeholder-shown:top-2 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-focus:-top-2 peer-focus:text-sm peer-focus:text-gray-600">
+                    Sanctioned
+                </label>
+            </div>
+            <div class="relative">
+                <input
+                    type="number"
+                    id="contractual-Pharmacist-available"
+                    class="peer w-48 px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    placeholder=" "
+                    required>
+                <label
+                    for="contractual-Pharmacist-available"
+                    class="absolute left-3 -top-2 text-sm text-gray-600 bg-white px-1 transition-all peer-placeholder-shown:top-2 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-focus:-top-2 peer-focus:text-sm peer-focus:text-gray-600">
+                    Available
+                </label>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Lab Technicians Section -->
+<div class="bg-white p-4 rounded-lg shadow-md mb-6">
+    <h3 class="text-2xl font-semibold text-blue-600 mb-4">Lab Technicians</h3>
+
+    <div class="mb-6 flex items-center justify-between">
+        <label for="Regular" class="w-1/5 block text-gray-700 text-lg font-semibold">Regular</label>
+        <div class="flex space-x-4">
+            <div class="relative">
+                <input
+                    type="number"
+                    id="regular-LabTechnicians-sanctioned"
+                    class="peer w-48 px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    placeholder=" "
+                    required>
+                <label
+                    for="regular-LabTechnicians-sanctioned"
+                    class="absolute left-3 -top-2 text-sm text-gray-600 bg-white px-1 transition-all peer-placeholder-shown:top-2 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-focus:-top-2 peer-focus:text-sm peer-focus:text-gray-600">
+                    Sanctioned
+                </label>
+            </div>
+            <div class="relative">
+                <input
+                    type="number"
+                    id="regular-LabTechnicians-available"
+                    class="peer w-48 px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    placeholder=" "
+                    required>
+                <label
+                    for="regular-LabTechnicians-available"
+                    class="absolute left-3 -top-2 text-sm text-gray-600 bg-white px-1 transition-all peer-placeholder-shown:top-2 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-focus:-top-2 peer-focus:text-sm peer-focus:text-gray-600">
+                    Available
+                </label>
+            </div>
+        </div>
+    </div>
+
+    <div class="mb-6 flex items-center justify-between">
+        <label for="Contractual" class="w-1/5 block text-gray-700 text-lg font-semibold">Contractual</label>
+        <div class="flex space-x-4">
+            <div class="relative">
+                <input
+                    type="number"
+                    id="contractual-LabTechnicians-sanctioned"
+                    class="peer w-48 px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    placeholder=" "
+                    required>
+                <label
+                    for="contractual-LabTechnicians-sanctioned"
+                    class="absolute left-3 -top-2 text-sm text-gray-600 bg-white px-1 transition-all peer-placeholder-shown:top-2 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-focus:-top-2 peer-focus:text-sm peer-focus:text-gray-600">
+                    Sanctioned
+                </label>
+            </div>
+            <div class="relative">
+                <input
+                    type="number"
+                    id="contractual-LabTechnicians-available"
+                    class="peer w-48 px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    placeholder=" "
+                    required>
+                <label
+                    for="contractual-LabTechnicians-available"
+                    class="absolute left-3 -top-2 text-sm text-gray-600 bg-white px-1 transition-all peer-placeholder-shown:top-2 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-focus:-top-2 peer-focus:text-sm peer-focus:text-gray-600">
+                    Available
+                </label>
+            </div>
+        </div>
+    </div>
+</div>
+    <!-- NETP STS / Block In-Charge Section -->
+<div class="bg-white p-4 rounded-lg shadow-md mb-6">
+    <h3 class="text-2xl font-semibold text-blue-600 mb-4">NETP STS / Block In-Charge</h3>
+
+    <div class="mb-6 flex items-center justify-between">
+        <label for="Regular" class="w-1/5 block text-gray-700 text-lg font-semibold">Regular</label>
+        <div class="flex space-x-4">
+            <div class="relative">
+                <input
+                    type="number"
+                    id="regular-NETP-STS-sanctioned"
+                    class="peer w-48 px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    placeholder=" "
+                    required>
+                <label
+                    for="regular-NETP-STS-sanctioned"
+                    class="absolute left-3 -top-2 text-sm text-gray-600 bg-white px-1 transition-all peer-placeholder-shown:top-2 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-focus:-top-2 peer-focus:text-sm peer-focus:text-gray-600">
+                    Sanctioned
+                </label>
+            </div>
+            <div class="relative">
+                <input
+                    type="number"
+                    id="regular-NETP-STS-available"
+                    class="peer w-48 px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    placeholder=" "
+                    required>
+                <label
+                    for="regular-NETP-STS-available"
+                    class="absolute left-3 -top-2 text-sm text-gray-600 bg-white px-1 transition-all peer-placeholder-shown:top-2 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-focus:-top-2 peer-focus:text-sm peer-focus:text-gray-600">
+                    Available
+                </label>
+            </div>
+        </div>
+    </div>
+
+    <div class="mb-6 flex items-center justify-between">
+        <label for="Contractual" class="w-1/5 block text-gray-700 text-lg font-semibold">Contractual</label>
+        <div class="flex space-x-4">
+            <div class="relative">
+                <input
+                    type="number"
+                    id="contractual-NETP-STS-sanctioned"
+                    class="peer w-48 px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    placeholder=" "
+                    required>
+                <label
+                    for="contractual-NETP-STS-sanctioned"
+                    class="absolute left-3 -top-2 text-sm text-gray-600 bg-white px-1 transition-all peer-placeholder-shown:top-2 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-focus:-top-2 peer-focus:text-sm peer-focus:text-gray-600">
+                    Sanctioned
+                </label>
+            </div>
+            <div class="relative">
+                <input
+                    type="number"
+                    id="contractual-NETP-STS-available"
+                    class="peer w-48 px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    placeholder=" "
+                    required>
+                <label
+                    for="contractual-NETP-STS-available"
+                    class="absolute left-3 -top-2 text-sm text-gray-600 bg-white px-1 transition-all peer-placeholder-shown:top-2 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-focus:-top-2 peer-focus:text-sm peer-focus:text-gray-600">
+                    Available
+                </label>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- NETP STLS / Block In-Charge Section -->
+<div class="bg-white p-4 rounded-lg shadow-md mb-6">
+    <h3 class="text-2xl font-semibold text-blue-600 mb-4">NETP STLS / Block In-Charge</h3>
+
+    <div class="mb-6 flex items-center justify-between">
+        <label for="Regular" class="w-1/5 block text-gray-700 text-lg font-semibold">Regular</label>
+        <div class="flex space-x-4">
+            <div class="relative">
+                <input
+                    type="number"
+                    id="regular-NETP-STLS-sanctioned"
+                    class="peer w-48 px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    placeholder=" "
+                    required>
+                <label
+                    for="regular-NETP-STLS-sanctioned"
+                    class="absolute left-3 -top-2 text-sm text-gray-600 bg-white px-1 transition-all peer-placeholder-shown:top-2 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-focus:-top-2 peer-focus:text-sm peer-focus:text-gray-600">
+                    Sanctioned
+                </label>
+            </div>
+            <div class="relative">
+                <input
+                    type="number"
+                    id="regular-NETP-STLS-available"
+                    class="peer w-48 px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    placeholder=" "
+                    required>
+                <label
+                    for="regular-NETP-STLS-available"
+                    class="absolute left-3 -top-2 text-sm text-gray-600 bg-white px-1 transition-all peer-placeholder-shown:top-2 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-focus:-top-2 peer-focus:text-sm peer-focus:text-gray-600">
+                    Available
+                </label>
+            </div>
+        </div>
+    </div>
+
+    <div class="mb-6 flex items-center justify-between">
+        <label for="Contractual" class="w-1/5 block text-gray-700 text-lg font-semibold">Contractual</label>
+        <div class="flex space-x-4">
+            <div class="relative">
+                <input
+                    type="number"
+                    id="contractual-NETP-STLS-sanctioned"
+                    class="peer w-48 px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    placeholder=" "
+                    required>
+                <label
+                    for="contractual-NETP-STLS-sanctioned"
+                    class="absolute left-3 -top-2 text-sm text-gray-600 bg-white px-1 transition-all peer-placeholder-shown:top-2 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-focus:-top-2 peer-focus:text-sm peer-focus:text-gray-600">
+                    Sanctioned
+                </label>
+            </div>
+            <div class="relative">
+                <input
+                    type="number"
+                    id="contractual-NETP-STLS-available"
+                    class="peer w-48 px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    placeholder=" "
+                    required>
+                <label
+                    for="contractual-NETP-STLS-available"
+                    class="absolute left-3 -top-2 text-sm text-gray-600 bg-white px-1 transition-all peer-placeholder-shown:top-2 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-focus:-top-2 peer-focus:text-sm peer-focus:text-gray-600">
+                    Available
+                </label>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Staff Nurses Section -->
+<div class="bg-white p-4 rounded-lg shadow-md mb-6">
+    <h3 class="text-2xl font-semibold text-blue-600 mb-4">Staff Nurses</h3>
+
+    <div class="mb-6 flex items-center justify-between">
+        <label for="Regular" class="w-1/5 block text-gray-700 text-lg font-semibold">Regular</label>
+        <div class="flex space-x-4">
+            <div class="relative">
+                <input
+                    type="number"
+                    id="regular-StaffNurses-sanctioned"
+                    class="peer w-48 px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    placeholder=" "
+                    required>
+                <label
+                    for="regular-StaffNurses-sanctioned"
+                    class="absolute left-3 -top-2 text-sm text-gray-600 bg-white px-1 transition-all peer-placeholder-shown:top-2 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-focus:-top-2 peer-focus:text-sm peer-focus:text-gray-600">
+                    Sanctioned
+                </label>
+            </div>
+            <div class="relative">
+                <input
+                    type="number"
+                    id="regular-StaffNurses-available"
+                    class="peer w-48 px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    placeholder=" "
+                    required>
+                <label
+                    for="regular-StaffNurses-available"
+                    class="absolute left-3 -top-2 text-sm text-gray-600 bg-white px-1 transition-all peer-placeholder-shown:top-2 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-focus:-top-2 peer-focus:text-sm peer-focus:text-gray-600">
+                    Available
+                </label>
+            </div>
+        </div>
+    </div>
+
+    <div class="mb-6 flex items-center justify-between">
+        <label for="Contractual" class="w-1/5 block text-gray-700 text-lg font-semibold">Contractual</label>
+        <div class="flex space-x-4">
+            <div class="relative">
+                <input
+                    type="number"
+                    id="contractual-StaffNurses-sanctioned"
+                    class="peer w-48 px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    placeholder=" "
+                    required>
+                <label
+                    for="contractual-StaffNurses-sanctioned"
+                    class="absolute left-3 -top-2 text-sm text-gray-600 bg-white px-1 transition-all peer-placeholder-shown:top-2 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-focus:-top-2 peer-focus:text-sm peer-focus:text-gray-600">
+                    Sanctioned
+                </label>
+            </div>
+            <div class="relative">
+                <input
+                    type="number"
+                    id="contractual-StaffNurses-available"
+                    class="peer w-48 px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    placeholder=" "
+                    required>
+                <label
+                    for="contractual-StaffNurses-available"
+                    class="absolute left-3 -top-2 text-sm text-gray-600 bg-white px-1 transition-all peer-placeholder-shown:top-2 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-focus:-top-2 peer-focus:text-sm peer-focus:text-gray-600">
+                    Available
+                </label>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ANMs Section -->
+<div class="bg-white p-4 rounded-lg shadow-md mb-6">
+    <h3 class="text-2xl font-semibold text-blue-600 mb-4">ANMs</h3>
+
+    <div class="mb-6 flex items-center justify-between">
+        <label for="Regular" class="w-1/5 block text-gray-700 text-lg font-semibold">Regular</label>
+        <div class="flex space-x-4">
+            <div class="relative">
+                <input
+                    type="number"
+                    id="regular-ANMs-sanctioned"
+                    class="peer w-48 px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    placeholder=" "
+                    required>
+                <label
+                    for="regular-ANMs-sanctioned"
+                    class="absolute left-3 -top-2 text-sm text-gray-600 bg-white px-1 transition-all peer-placeholder-shown:top-2 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-focus:-top-2 peer-focus:text-sm peer-focus:text-gray-600">
+                    Sanctioned
+                </label>
+            </div>
+            <div class="relative">
+                <input
+                    type="number"
+                    id="regular-ANMs-available"
+                    class="peer w-48 px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    placeholder=" "
+                    required>
+                <label
+                    for="regular-ANMs-available"
+                    class="absolute left-3 -top-2 text-sm text-gray-600 bg-white px-1 transition-all peer-placeholder-shown:top-2 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-focus:-top-2 peer-focus:text-sm peer-focus:text-gray-600">
+                    Available
+                </label>
+            </div>
+        </div>
+    </div>
+
+    <div class="mb-6 flex items-center justify-between">
+        <label for="Contractual" class="w-1/5 block text-gray-700 text-lg font-semibold">Contractual</label>
+        <div class="flex space-x-4">
+            <div class="relative">
+                <input
+                    type="number"
+                    id="contractual-ANMs-sanctioned"
+                    class="peer w-48 px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    placeholder=" "
+                    required>
+                <label
+                    for="contractual-ANMs-sanctioned"
+                    class="absolute left-3 -top-2 text-sm text-gray-600 bg-white px-1 transition-all peer-placeholder-shown:top-2 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-focus:-top-2 peer-focus:text-sm peer-focus:text-gray-600">
+                    Sanctioned
+                </label>
+            </div>
+            <div class="relative">
+                <input
+                    type="number"
+                    id="contractual-ANMs-available"
+                    class="peer w-48 px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    placeholder=" "
+                    required>
+                <label
+                    for="contractual-ANMs-available"
+                    class="absolute left-3 -top-2 text-sm text-gray-600 bg-white px-1 transition-all peer-placeholder-shown:top-2 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-focus:-top-2 peer-focus:text-sm peer-focus:text-gray-600">
+                    Available
+                </label>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ASHAs Section -->
+<div class="bg-white p-4 rounded-lg shadow-md mb-6">
+    <h3 class="text-2xl font-semibold text-blue-600 mb-4">ASHAs</h3>
+
+    <div class="mb-6 flex items-center justify-between">
+        <label for="Regular" class="w-1/5 block text-gray-700 text-lg font-semibold">Regular</label>
+        <div class="flex space-x-4">
+            <div class="relative">
+                <input
+                    type="number"
+                    id="regular-ASHAs-sanctioned"
+                    class="peer w-48 px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    placeholder=" "
+                    required>
+                <label
+                    for="regular-ASHAs-sanctioned"
+                    class="absolute left-3 -top-2 text-sm text-gray-600 bg-white px-1 transition-all peer-placeholder-shown:top-2 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-focus:-top-2 peer-focus:text-sm peer-focus:text-gray-600">
+                    Sanctioned
+                </label>
+            </div>
+            <div class="relative">
+                <input
+                    type="number"
+                    id="regular-ASHAs-available"
+                    class="peer w-48 px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    placeholder=" "
+                    required>
+                <label
+                    for="regular-ASHAs-available"
+                    class="absolute left-3 -top-2 text-sm text-gray-600 bg-white px-1 transition-all peer-placeholder-shown:top-2 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-focus:-top-2 peer-focus:text-sm peer-focus:text-gray-600">
+                    Available
+                </label>
+            </div>
+        </div>
+    </div>
+
+    <div class="mb-6 flex items-center justify-between">
+        <label for="Contractual" class="w-1/5 block text-gray-700 text-lg font-semibold">Contractual</label>
+        <div class="flex space-x-4">
+            <div class="relative">
+                <input
+                    type="number"
+                    id="contractual-ASHAs-sanctioned"
+                    class="peer w-48 px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    placeholder=" "
+                    required>
+                <label
+                    for="contractual-ASHAs-sanctioned"
+                    class="absolute left-3 -top-2 text-sm text-gray-600 bg-white px-1 transition-all peer-placeholder-shown:top-2 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-focus:-top-2 peer-focus:text-sm peer-focus:text-gray-600">
+                    Sanctioned
+                </label>
+            </div>
+            <div class="relative">
+                <input
+                    type="number"
+                    id="contractual-ASHAs-available"
+                    class="peer w-48 px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    placeholder=" "
+                    required>
+                <label
+                    for="contractual-ASHAs-available"
+                    class="absolute left-3 -top-2 text-sm text-gray-600 bg-white px-1 transition-all peer-placeholder-shown:top-2 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-focus:-top-2 peer-focus:text-sm peer-focus:text-gray-600">
+                    Available
+                </label>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+</div>
+
+
+
+    <!-- Footer Section -->
+    <footer class="flex justify-between p-4 bg-white border-t border-gray-300">
+        <button class="bg-gray-200 text-gray-800 px-4 py-2 rounded">Back</button>
+        <button class="bg-blue-600 text-white px-4 py-2 rounded">Save & Next</button>
+    </footer>
+</form>
+</div>
+
+<!-- <script src="js/main1.js"></script> -->
+
+</body>
+
+</html>
