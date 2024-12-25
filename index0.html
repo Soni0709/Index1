@@ -1,0 +1,793 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Health Care Infrastructure</title>
+    <style>
+        /* Floating label effect */
+        .input-container {
+            position: relative;
+            margin-bottom: 1rem;
+        }
+
+        .input-container input {
+            padding-top: 1.5rem; /* Make space for the floating label */
+            padding-bottom: 0.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .input-container label {
+            position: absolute;
+            left: 1rem;
+            top: 1rem;
+            transition: all 0.3s ease;
+            color: gray;
+        }
+
+        .input-container input:not(:placeholder-shown) + label,
+        .input-container input:focus + label {
+            top: -0.5rem;
+            left: 1rem;
+            font-size: 0.875rem;
+            color: black; /* Optional: Change the label color when floating */
+        }
+
+        .input-container input:focus {
+            border-top-color: transparent; /* Hide the top border on focus */
+        }
+    </style>
+</head>
+
+<body class="bg-gray-100 font-sans">
+    <div class="container mx-auto p-6">
+        <!-- Header Section -->
+        <div class="flex justify-between items-center mb-6">
+            <h2 class="text-3xl font-bold text-gray-800">Health Care Infrastructure</h2>
+            <span class="text-sm font-medium bg-orange-100 text-orange-600 py-1 px-3 rounded-full">4/8</span>
+        </div>
+
+        <!-- Medical College Section (Urban only) -->
+        <div id="medical-college" class="bg-white rounded-lg shadow-md p-6 mb-4">
+            <h3 class="text-2xl font-semibold text-blue-600 mb-4">Medical College</h3>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <!-- Sanctioned -->
+                <div class="input-container">
+                    <input type="number" id="medical-college-sanctioned" min="0" max="20" class="w-full p-3 border border-gray-300 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="" oninput="updateFields('medical-college')">
+                    <label for="medical-college-Sanctioned"
+                    class="absolute left-3 -top-2 text-sm text-gray-600 bg-white px-1 transition-all peer-placeholder-shown:top-2 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-focus:-top-2 peer-focus:text-sm peer-focus:text-gray-600">
+                    Sanctioned
+                </label>
+                </div>
+                <!-- Functional -->
+                <div class="input-container">
+                    <input type="number" id="medical-college-functional" class="w-full p-3 border border-gray-300 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="" oninput="updateFields('medical-college')" disabled>
+                    <label for="medical-college-functional"
+                        class="absolute left-3 -top-2 text-sm text-gray-600 bg-white px-1 transition-all peer-placeholder-shown:top-2 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-focus:-top-2 peer-focus:text-sm peer-focus:text-gray-600">
+                        Functional
+                    </label>
+                </div>
+            </div>
+
+            <!-- Non-Functional Container (displayed below Functional) -->
+            <div id="medical-college-non-functional-container" style="display: none;" class="mt-4">
+                <div class="flex items-center justify-end w-full">
+                    <label class="block text-sm text-black bg-orange-300 mb-1 p-2 inline-block rounded-md text-lg w-80% max-w-sm">
+                        Non-Functional: <span id="medical-college-non-functional-count" class="text-black text-sm">0</span>
+                    </label>
+                </div>
+            </div>
+        </div>
+
+        <!-- District Hospital Section -->
+        <div id="district-hospital" class="bg-white rounded-lg shadow-md p-6 mb-4">
+            <h3 class="text-2xl font-semibold text-blue-600 mb-4">District Hospital</h3>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <!-- Sanctioned -->
+                <div class="input-container">
+                    <input type="number" id="district-hospital-sanctioned" min="0" max="5" class="w-full p-3 border border-gray-300 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="" oninput="updateFields('district-hospital')">
+                    <label for="district-hospital-sanctioned"
+                    class="absolute left-3 -top-2 text-sm text-gray-600 bg-white px-1 transition-all peer-placeholder-shown:top-2 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-focus:-top-2 peer-focus:text-sm peer-focus:text-gray-600">
+                    Sanctioned
+                </label>
+                </div>
+                <!-- Functional -->
+                <div class="input-container">
+                    <input type="number" id="district-hospital-functional" class="w-full p-3 border border-gray-300 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="" oninput="updateFields('district-hospital')" disabled>
+                    <label for="district-hospital-functional"
+                        class="absolute left-3 -top-2 text-sm text-gray-600 bg-white px-1 transition-all peer-placeholder-shown:top-2 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-focus:-top-2 peer-focus:text-sm peer-focus:text-gray-600">
+                        Functional
+                    </label>
+                </div>
+            </div>
+
+            <!-- Non-Functional Container (displayed below Functional) -->
+            <div id="district-hospital-non-functional-container" style="display: none;" class="mt-4">
+                <div class="flex items-center justify-end w-full">
+                    <label class="block text-sm text-black bg-orange-300 mb-1 p-2 inline-block rounded-md text-lg w-80% max-w-sm">
+                        Non-Functional: <span id="district-hospital-non-functional-count" class="text-black text-sm">0</span>
+                    </label>
+                </div>
+            </div>
+        </div>
+
+        <!-- Sub-District Hospital Section -->
+        <div id="sub-district-hospital" class="bg-white rounded-lg shadow-md p-6 mb-4">
+            <h3 class="text-2xl font-semibold text-blue-600 mb-4">Sub-District Hospital</h3>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <!-- Sanctioned -->
+                <div class="input-container">
+                    <input type="number" id="sub-district-hospital-sanctioned" min="0" max="5" class="w-full p-3 border border-gray-300 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="" oninput="updateFields('sub-district-hospital')">
+                    <label for="sub-district-hospital-sanctioned"
+                    class="absolute left-3 -top-2 text-sm text-gray-600 bg-white px-1 transition-all peer-placeholder-shown:top-2 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-focus:-top-2 peer-focus:text-sm peer-focus:text-gray-600">
+                    Sanctioned
+                </label>
+                </div>
+                <!-- Functional -->
+                <div class="input-container">
+                    <input type="number" id="sub-district-hospital-functional" class="w-full p-3 border border-gray-300 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="" oninput="updateFields('sub-district-hospital')" disabled>
+                    <label for="sub-district-hospital-functional"
+                        class="absolute left-3 -top-2 text-sm text-gray-600 bg-white px-1 transition-all peer-placeholder-shown:top-2 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-focus:-top-2 peer-focus:text-sm peer-focus:text-gray-600">
+                        Functional
+                    </label>
+                </div>
+            </div>
+
+            <!-- Non-Functional Container (displayed below Functional) -->
+            <div id="sub-district-hospital-non-functional-container" style="display: none;" class="mt-4">
+                <div class="flex items-center justify-end w-full">
+                    <label class="block text-sm text-black bg-orange-300 mb-1 p-2 inline-block rounded-md text-lg w-80% max-w-sm">
+                        Non-Functional: <span id="sub-district-hospital-non-functional-count" class="text-black text-sm">0</span>
+                    </label>
+                </div>
+            </div>
+        </div>
+
+        <!-- Community Health Centre (CHC) Section -->
+        <div id="community-health-centre" class="bg-white rounded-lg shadow-md p-6 mb-4">
+            <h3 class="text-2xl font-semibold text-blue-600 mb-4">Community Health Centre (CHC)</h3>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <!-- Sanctioned -->
+                <div class="input-container">
+                    <input type="number" id="community-health-centre-sanctioned" min="0" max="25" class="w-full p-3 border border-gray-300 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="" oninput="updateFields('community-health-centre')">
+                    <label for="community-health-centre-sanctioned"
+                    class="absolute left-3 -top-2 text-sm text-gray-600 bg-white px-1 transition-all peer-placeholder-shown:top-2 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-focus:-top-2 peer-focus:text-sm peer-focus:text-gray-600">
+                    Sanctioned
+                </label>
+                </div>
+                <!-- Functional -->
+                <div class="input-container">
+                    <input type="number" id="community-health-centre-functional" class="w-full p-3 border border-gray-300 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="" oninput="updateFields('community-health-centre')" disabled>
+                    <label for="community-health-centre-functional"
+                        class="absolute left-3 -top-2 text-sm text-gray-600 bg-white px-1 transition-all peer-placeholder-shown:top-2 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-focus:-top-2 peer-focus:text-sm peer-focus:text-gray-600">
+                        Functional
+                    </label>
+                </div>
+            </div>
+
+            <!-- Non-Functional Container (displayed below Functional) -->
+            <div id="community-health-centre-non-functional-container" style="display: none;" class="mt-4">
+                <div class="flex items-center justify-end w-full">
+                    <label class="block text-sm text-black bg-orange-300 mb-1 p-2 inline-block rounded-md text-lg w-80% max-w-sm">
+                        Non-Functional: <span id="community-health-centre-non-functional-count" class="text-black text-sm">0</span>
+                    </label>
+                </div>
+            </div>
+        </div>
+
+        <!-- FRUs Community Health Centre (FRU CHC) Section -->
+        <div id="fru-community-health-centre" class="bg-white rounded-lg shadow-md p-6 mb-4">
+            <h3 class="text-2xl font-semibold text-blue-600 mb-4">FRUs Community Health Centre (FRU CHC)</h3>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <!-- Sanctioned -->
+                <div class="input-container">
+                    <input type="number" id="fru-community-health-centre-sanctioned" min="0" max="25" class="w-full p-3 border border-gray-300 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="" oninput="updateFields('fru-community-health-centre')">
+                    <label for="fru-community-health-centre-sanctioned"
+                    class="absolute left-3 -top-2 text-sm text-gray-600 bg-white px-1 transition-all peer-placeholder-shown:top-2 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-focus:-top-2 peer-focus:text-sm peer-focus:text-gray-600">
+                    Sanctioned
+                </label>
+                </div>
+                <!-- Functional -->
+                <div class="input-container">
+                    <input type="number" id="fru-community-health-centre-functional" class="w-full p-3 border border-gray-300 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="" oninput="updateFields('fru-community-health-centre')" disabled>
+                    <label for="fru-community-health-centre-functional"
+                        class="absolute left-3 -top-2 text-sm text-gray-600 bg-white px-1 transition-all peer-placeholder-shown:top-2 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-focus:-top-2 peer-focus:text-sm peer-focus:text-gray-600">
+                        Functional
+                    </label>
+                </div>
+            </div>
+
+            <!-- Non-Functional Container (displayed below Functional) -->
+            <div id="fru-community-health-centre-non-functional-container" style="display: none;" class="mt-4">
+                <div class="flex items-center justify-end w-full">
+                    <label class="block text-sm text-black bg-orange-300 mb-1 p-2 inline-block rounded-md text-lg w-80% max-w-sm">
+                        Non-Functional: <span id="fru-community-health-centre-non-functional-count" class="text-black text-sm">0</span>
+                    </label>
+                </div>
+            </div>
+        </div>
+
+        <!-- PHC Section -->
+        <div id="phc" class="bg-white rounded-lg shadow-md p-6 mb-4">
+            <h3 class="text-2xl font-semibold text-blue-600 mb-4">PHC</h3>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <!-- Sanctioned -->
+                <div class="input-container">
+                    <input type="number" id="phc-sanctioned" min="0" max="50" class="w-full p-3 border border-gray-300 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="" oninput="updateFields('phc')">
+                    <label for="phc-sanctioned"
+                    class="absolute left-3 -top-2 text-sm text-gray-600 bg-white px-1 transition-all peer-placeholder-shown:top-2 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-focus:-top-2 peer-focus:text-sm peer-focus:text-gray-600">
+                    Sanctioned
+                </label>
+                </div>
+                <!-- Functional -->
+                <div class="input-container">
+                    <input type="number" id="phc-functional" class="w-full p-3 border border-gray-300 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="" oninput="updateFields('phc')" disabled>
+                    <label for="phc-functional"
+                        class="absolute left-3 -top-2 text-sm text-gray-600 bg-white px-1 transition-all peer-placeholder-shown:top-2 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-focus:-top-2 peer-focus:text-sm peer-focus:text-gray-600">
+                        Functional
+                    </label>
+                </div>
+            </div>
+
+            <!-- Non-Functional Container (displayed below Functional) -->
+            <div id="phc-non-functional-container" style="display: none;" class="mt-4">
+                <div class="flex items-center justify-end w-full">
+                    <label class="block text-sm text-black bg-orange-300 mb-1 p-2 inline-block rounded-md text-lg w-80% max-w-sm">
+                        Non-Functional: <span id="phc-non-functional-count" class="text-black text-sm">0</span>
+                    </label>
+                </div>
+            </div>
+        </div>
+
+        <!-- 24*7 PHC Section -->
+        <div id="twenty-four-seven-phc" class="bg-white rounded-lg shadow-md p-6 mb-4">
+            <h3 class="text-2xl font-semibold text-blue-600 mb-4">24*7 PHC</h3>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <!-- Sanctioned -->
+                <div class="input-container">
+                    <input type="number" id="twenty-four-seven-phc-sanctioned" min="0" max="50" class="w-full p-3 border border-gray-300 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="" oninput="updateFields('twenty-four-seven-phc')">
+                    <label for="twenty-four-seven-phc-sanctioned"
+                    class="absolute left-3 -top-2 text-sm text-gray-600 bg-white px-1 transition-all peer-placeholder-shown:top-2 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-focus:-top-2 peer-focus:text-sm peer-focus:text-gray-600">
+                    Sanctioned
+                </label>
+                </div>
+                <!-- Functional -->
+                <div class="input-container">
+                    <input type="number" id="twenty-four-seven-phc-functional" class="w-full p-3 border border-gray-300 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="" oninput="updateFields('twenty-four-seven-phc')" disabled>
+                    <label for="twenty-four-seven-phc-functional"
+                        class="absolute left-3 -top-2 text-sm text-gray-600 bg-white px-1 transition-all peer-placeholder-shown:top-2 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-focus:-top-2 peer-focus:text-sm peer-focus:text-gray-600">
+                        Functional
+                    </label>
+                </div>
+            </div>
+
+            <!-- Non-Functional Container (displayed below Functional) -->
+            <div id="twenty-four-seven-phc-non-functional-container" style="display: none;" class="mt-4">
+                <div class="flex items-center justify-end w-full">
+                    <label class="block text-sm text-black bg-orange-300 mb-1 p-2 inline-block rounded-md text-lg w-80% max-w-sm">
+                        Non-Functional: <span id="twenty-four-seven-phc-non-functional-count" class="text-black text-sm">0</span>
+                    </label>
+                </div>
+            </div>
+        </div>
+
+        <!-- AAM-PHC Section -->
+        <div id="aam-phc" class="bg-white rounded-lg shadow-md p-6 mb-4">
+            <h3 class="text-2xl font-semibold text-blue-600 mb-4">AAM-PHC</h3>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <!-- Sanctioned -->
+                <div class="input-container">
+                    <input type="number" id="aam-phc-sanctioned" min="0" max="100" class="w-full p-3 border border-gray-300 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="" oninput="updateFields('aam-phc')">
+                    <label for="aam-phc-sanctioned"
+                    class="absolute left-3 -top-2 text-sm text-gray-600 bg-white px-1 transition-all peer-placeholder-shown:top-2 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-focus:-top-2 peer-focus:text-sm peer-focus:text-gray-600">
+                    Sanctioned
+                </label>
+                </div>
+                <!-- Functional -->
+                <div class="input-container">
+                    <input type="number" id="aam-phc-functional" class="w-full p-3 border border-gray-300 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="" oninput="updateFields('aam-phc')" disabled>
+                    <label for="aam-phc-functional"
+                        class="absolute left-3 -top-2 text-sm text-gray-600 bg-white px-1 transition-all peer-placeholder-shown:top-2 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-focus:-top-2 peer-focus:text-sm peer-focus:text-gray-600">
+                        Functional
+                    </label>
+                </div>
+            </div>
+
+            <!-- Non-Functional Container (displayed below Functional) -->
+            <div id="aam-phc-non-functional-container" style="display: none;" class="mt-4">
+                <div class="flex items-center justify-end w-full">
+                    <label class="block text-sm text-black bg-orange-300 mb-1 p-2 inline-block rounded-md text-lg w-80% max-w-sm">
+                        Non-Functional: <span id="aam-phc-non-functional-count" class="text-black text-sm">0</span>
+                    </label>
+                </div>
+            </div>
+        </div>
+
+        <!-- 24*7 AAM-PHC Section -->
+        <div id="twenty-four-seven-aam-phc" class="bg-white rounded-lg shadow-md p-6 mb-4">
+            <h3 class="text-2xl font-semibold text-blue-600 mb-4">24*7 AAM-PHC</h3>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <!-- Sanctioned -->
+                <div class="input-container">
+                    <input type="number" id="twenty-four-seven-aam-phc-sanctioned" min="0" max="100" class="w-full p-3 border border-gray-300 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="" oninput="updateFields('twenty-four-seven-aam-phc')">
+                    <label for="twenty-four-seven-aam-phc-sanctioned"
+                    class="absolute left-3 -top-2 text-sm text-gray-600 bg-white px-1 transition-all peer-placeholder-shown:top-2 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-focus:-top-2 peer-focus:text-sm peer-focus:text-gray-600">
+                    Sanctioned
+                </label>
+                </div>
+                <!-- Functional -->
+                <div class="input-container">
+                    <input type="number" id="twenty-four-seven-aam-phc-functional" class="w-full p-3 border border-gray-300 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="" oninput="updateFields('twenty-four-seven-aam-phc')" disabled>
+                    <label for="twenty-four-seven-aam-phc-functional"
+                        class="absolute left-3 -top-2 text-sm text-gray-600 bg-white px-1 transition-all peer-placeholder-shown:top-2 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-focus:-top-2 peer-focus:text-sm peer-focus:text-gray-600">
+                        Functional
+                    </label>
+                </div>
+            </div>
+
+            <!-- Non-Functional Container (displayed below Functional) -->
+            <div id="twenty-four-seven-aam-phc-non-functional-container" style="display: none;" class="mt-4">
+                <div class="flex items-center justify-end w-full">
+                    <label class="block text-sm text-black bg-orange-300 mb-1 p-2 inline-block rounded-md text-lg w-80% max-w-sm">
+                        Non-Functional: <span id="twenty-four-seven-aam-phc-non-functional-count" class="text-black text-sm">0</span>
+                    </label>
+                </div>
+            </div>
+        </div>
+
+        <!-- Urban Primary Health Centre (U-PHC) Section -->
+        <div id="urban-primary-health-centre" class="bg-white rounded-lg shadow-md p-6 mb-4">
+            <h3 class="text-2xl font-semibold text-blue-600 mb-4">Urban Primary Health Centre (U-PHC)</h3>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <!-- Sanctioned -->
+                <div class="input-container">
+                    <input type="number" id="urban-primary-health-centre-sanctioned" min="0" max="100" class="w-full p-3 border border-gray-300 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="" oninput="updateFields('urban-primary-health-centre')">
+                    <label for="urban-primary-health-centre-sanctioned"
+                    class="absolute left-3 -top-2 text-sm text-gray-600 bg-white px-1 transition-all peer-placeholder-shown:top-2 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-focus:-top-2 peer-focus:text-sm peer-focus:text-gray-600">
+                    Sanctioned
+                </label>
+                </div>
+                <!-- Functional -->
+                <div class="input-container">
+                    <input type="number" id="urban-primary-health-centre-functional" class="w-full p-3 border border-gray-300 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="" oninput="updateFields('urban-primary-health-centre')" disabled>
+                    <label for="urban-primary-health-centre-functional"
+                        class="absolute left-3 -top-2 text-sm text-gray-600 bg-white px-1 transition-all peer-placeholder-shown:top-2 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-focus:-top-2 peer-focus:text-sm peer-focus:text-gray-600">
+                        Functional
+                    </label>
+                </div>
+            </div>
+
+            <!-- Non-Functional Container (displayed below Functional) -->
+            <div id="urban-primary-health-centre-non-functional-container" style="display: none;" class="mt-4">
+                <div class="flex items-center justify-end w-full">
+                    <label class="block text-sm text-black bg-orange-300 mb-1 p-2 inline-block rounded-md text-lg w-80% max-w-sm">
+                        Non-Functional: <span id="urban-primary-health-centre-non-functional-count" class="text-black text-sm">0</span>
+                    </label>
+                </div>
+            </div>
+        </div>
+
+        <!-- Urban Primary Health Centre-AAM (U-PHC-AAM) Section -->
+        <div id="urban-primary-health-centre-aam" class="bg-white rounded-lg shadow-md p-6 mb-4">
+            <h3 class="text-2xl font-semibold text-blue-600 mb-4">Urban Primary Health Centre-AAM (U-PHC-AAM)</h3>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <!-- Sanctioned -->
+                <div class="input-container">
+                    <input type="number" id="urban-primary-health-centre-aam-sanctioned" min="0" max="100" class="w-full p-3 border border-gray-300 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="" oninput="updateFields('urban-primary-health-centre-aam')">
+                    <label for="urban-primary-health-centre-aam-sanctioned"
+                    class="absolute left-3 -top-2 text-sm text-gray-600 bg-white px-1 transition-all peer-placeholder-shown:top-2 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-focus:-top-2 peer-focus:text-sm peer-focus:text-gray-600">
+                    Sanctioned
+                </label>
+                </div>
+                <!-- Functional -->
+                <div class="input-container">
+                    <input type="number" id="urban-primary-health-centre-aam-functional" class="w-full p-3 border border-gray-300 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="" oninput="updateFields('urban-primary-health-centre-aam')" disabled>
+                    <label for="urban-primary-health-centre-aam-functional"
+                        class="absolute left-3 -top-2 text-sm text-gray-600 bg-white px-1 transition-all peer-placeholder-shown:top-2 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-focus:-top-2 peer-focus:text-sm peer-focus:text-gray-600">
+                        Functional
+                    </label>
+                </div>
+            </div>
+
+            <!-- Non-Functional Container (displayed below Functional) -->
+            <div id="urban-primary-health-centre-aam-non-functional-container" style="display: none;" class="mt-4">
+                <div class="flex items-center justify-end w-full">
+                    <label class="block text-sm text-black bg-orange-300 mb-1 p-2 inline-block rounded-md text-lg w-80% max-w-sm">
+                        Non-Functional: <span id="urban-primary-health-centre-aam-non-functional-count" class="text-black text-sm">0</span>
+                    </label>
+                </div>
+            </div>
+        </div>
+
+    <!-- Sub-Centre Section -->
+     <div id="sub-centre" class="bg-white rounded-lg shadow-md p-6 mb-4">
+        <h3 class="text-2xl font-semibold text-blue-600 mb-4">Sub-Centre</h3>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <!-- Sanctioned -->
+            <div class="input-container">
+                <input type="number" id="sub-centre-sanctioned" min="0" max="100" class="w-full p-3 border border-gray-300 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="" oninput="updateFields('sub-centre')">
+                <label for="sub-centre-sanctioned"
+                class="absolute left-3 -top-2 text-sm text-gray-600 bg-white px-1 transition-all peer-placeholder-shown:top-2 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-focus:-top-2 peer-focus:text-sm peer-focus:text-gray-600">
+                Sanctioned
+            </label>
+            </div>
+            <!-- Functional -->
+            <div class="input-container">
+                <input type="number" id="sub-centre-functional" class="w-full p-3 border border-gray-300 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="" oninput="updateFields('sub-centre')" disabled>
+                <label for="sub-centre-functional"
+                    class="absolute left-3 -top-2 text-sm text-gray-600 bg-white px-1 transition-all peer-placeholder-shown:top-2 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-focus:-top-2 peer-focus:text-sm peer-focus:text-gray-600">
+                    Functional
+                </label>
+            </div>
+        </div>
+
+        <!-- Non-Functional Container (displayed below Functional) -->
+        <div id="sub-centre-non-functional-container" style="display: none;" class="mt-4">
+            <div class="flex items-center justify-end w-full">
+                <label class="block text-sm text-black bg-orange-300 mb-1 p-2 inline-block rounded-md text-lg w-80% max-w-sm">
+                    Non-Functional: <span id="sub-centre-non-functional-count" class="text-black text-sm">0</span>
+                </label>
+            </div>
+        </div>
+     </div>
+
+    <!-- AAM Sub-Centre Section -->
+     <div id="aam-sub-centre" class="bg-white rounded-lg shadow-md p-6 mb-4">
+        <h3 class="text-2xl font-semibold text-blue-600 mb-4">AAM Sub-Centre</h3>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <!-- Sanctioned -->
+            <div class="input-container">
+                <input type="number" id="aam-sub-centre-sanctioned" min="0" max="100" class="w-full p-3 border border-gray-300 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="" oninput="updateFields('aam-sub-centre')">
+                <label for="aam-sub-centre-sanctioned"
+                class="absolute left-3 -top-2 text-sm text-gray-600 bg-white px-1 transition-all peer-placeholder-shown:top-2 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-focus:-top-2 peer-focus:text-sm peer-focus:text-gray-600">
+                Sanctioned
+            </label>
+            </div>
+            <!-- Functional -->
+            <div class="input-container">
+                <input type="number" id="aam-sub-centre-functional" class="w-full p-3 border border-gray-300 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="" oninput="updateFields('aam-sub-centre')" disabled>
+                <label for="aam-sub-centre-functional"
+                    class="absolute left-3 -top-2 text-sm text-gray-600 bg-white px-1 transition-all peer-placeholder-shown:top-2 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-focus:-top-2 peer-focus:text-sm peer-focus:text-gray-600">
+                    Functional
+                </label>
+            </div>
+        </div>
+
+        <!-- Non-Functional Container (displayed below Functional) -->
+        <div id="aam-sub-centre-non-functional-container" style="display: none;" class="mt-4">
+            <div class="flex items-center justify-end w-full">
+                <label class="block text-sm text-black bg-orange-300 mb-1 p-2 inline-block rounded-md text-lg w-80% max-w-sm">
+                    Non-Functional: <span id="aam-sub-centre-non-functional-count" class="text-black text-sm">0</span>
+                </label>
+            </div>
+        </div>
+     </div>
+
+     <!-- AAM-Urban Health Centre Section -->
+     <div id="aam-urban-health-centre" class="bg-white rounded-lg shadow-md p-6 mb-4">
+        <h3 class="text-2xl font-semibold text-blue-600 mb-4">AAM-Urban Health Centre</h3>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <!-- Sanctioned -->
+            <div class="input-container">
+                <input type="number" id="aam-urban-health-centre-sanctioned" min="0" max="100" class="w-full p-3 border border-gray-300 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="" oninput="updateFields('aam-urban-health-centre')">
+                <label for="aam-urban-health-centre-sanctioned"
+                class="absolute left-3 -top-2 text-sm text-gray-600 bg-white px-1 transition-all peer-placeholder-shown:top-2 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-focus:-top-2 peer-focus:text-sm peer-focus:text-gray-600">
+                Sanctioned
+            </label>
+            </div>
+            <!-- Functional -->
+            <div class="input-container">
+                <input type="number" id="aam-urban-health-centre-functional" class="w-full p-3 border border-gray-300 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="" oninput="updateFields('aam-urban-health-centre')" disabled>
+                <label for="aam-urban-health-centre-functional"
+                    class="absolute left-3 -top-2 text-sm text-gray-600 bg-white px-1 transition-all peer-placeholder-shown:top-2 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-focus:-top-2 peer-focus:text-sm peer-focus:text-gray-600">
+                    Functional
+                </label>
+            </div>
+        </div>
+
+        <!-- Non-Functional Container (displayed below Functional) -->
+        <div id="aam-urban-health-centre-non-functional-container" style="display: none;" class="mt-4">
+            <div class="flex items-center justify-end w-full">
+                <label class="block text-sm text-black bg-orange-300 mb-1 p-2 inline-block rounded-md text-lg w-80% max-w-sm">
+                    Non-Functional: <span id="aam-urban-health-centre-non-functional-count" class="text-black text-sm">0</span>
+                </label>
+            </div>
+        </div>
+     </div>
+
+
+        <!-- MCH Wings Section -->
+        <div id="mch-wings" class="bg-white rounded-lg shadow-md p-6 mb-4">
+            <h3 class="text-2xl font-semibold text-blue-600 mb-4">MCH Wings</h3>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <!-- Sanctioned -->
+                <div class="input-container">
+                    <input type="number" id="mch-wings-sanctioned" min="0" max="50" class="w-full p-3 border border-gray-300 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="" oninput="updateFields('mch-wings')">
+                    <label for="mch-wings-sanctioned"
+                    class="absolute left-3 -top-2 text-sm text-gray-600 bg-white px-1 transition-all peer-placeholder-shown:top-2 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-focus:-top-2 peer-focus:text-sm peer-focus:text-gray-600">
+                    Sanctioned
+                </label>
+                </div>
+                <!-- Functional -->
+                <div class="input-container">
+                    <input type="number" id="mch-wings-functional" class="w-full p-3 border border-gray-300 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="" oninput="updateFields('mch-wings')" disabled>
+                    <label for="mch-wings-functional"
+                        class="absolute left-3 -top-2 text-sm text-gray-600 bg-white px-1 transition-all peer-placeholder-shown:top-2 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-focus:-top-2 peer-focus:text-sm peer-focus:text-gray-600">
+                        Functional
+                    </label>
+                </div>
+            </div>
+
+            <!-- Non-Functional Container (displayed below Functional) -->
+            <div id="mch-wings-non-functional-container" style="display: none;" class="mt-4">
+                <div class="flex items-center justify-end w-full">
+                    <label class="block text-sm text-black bg-orange-300 mb-1 p-2 inline-block rounded-md text-lg w-80% max-w-sm">
+                        Non-Functional: <span id="mch-wings-non-functional-count" class="text-black text-sm">0</span>
+                    </label>
+                </div>
+            </div>
+        </div>
+
+        <!-- SNCUs Section -->
+        <div id="sncus" class="bg-white rounded-lg shadow-md p-6 mb-4">
+            <h3 class="text-2xl font-semibold text-blue-600 mb-4">SNCUs</h3>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <!-- Sanctioned -->
+                <div class="input-container">
+                    <input type="number" id="sncus-sanctioned" min="0" max="50" class="w-full p-3 border border-gray-300 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="" oninput="updateFields('sncus')">
+                    <label for="sncus-sanctioned"
+                    class="absolute left-3 -top-2 text-sm text-gray-600 bg-white px-1 transition-all peer-placeholder-shown:top-2 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-focus:-top-2 peer-focus:text-sm peer-focus:text-gray-600">
+                    Sanctioned
+                </label>
+                </div>
+                <!-- Functional -->
+                <div class="input-container">
+                    <input type="number" id="sncus-functional" class="w-full p-3 border border-gray-300 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="" oninput="updateFields('sncus')" disabled>
+                    <label for="sncus-functional"
+                        class="absolute left-3 -top-2 text-sm text-gray-600 bg-white px-1 transition-all peer-placeholder-shown:top-2 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-focus:-top-2 peer-focus:text-sm peer-focus:text-gray-600">
+                        Functional
+                    </label>
+                </div>
+            </div>
+
+            <!-- Non-Functional Container (displayed below Functional) -->
+            <div id="sncus-non-functional-container" style="display: none;" class="mt-4">
+                <div class="flex items-center justify-end w-full">
+                    <label class="block text-sm text-black bg-orange-300 mb-1 p-2 inline-block rounded-md text-lg w-80% max-w-sm">
+                        Non-Functional: <span id="sncus-non-functional-count" class="text-black text-sm">0</span>
+                    </label>
+                </div>
+            </div>
+        </div>
+
+        <!-- NBSUs Section -->
+        <div id="nbsus" class="bg-white rounded-lg shadow-md p-6 mb-4">
+            <h3 class="text-2xl font-semibold text-blue-600 mb-4">NBSUs</h3>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <!-- Sanctioned -->
+                <div class="input-container">
+                    <input type="number" id="nbsus-sanctioned" min="0" max="50" class="w-full p-3 border border-gray-300 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="" oninput="updateFields('nbsus')">
+                    <label for="nbsus-sanctioned"
+                    class="absolute left-3 -top-2 text-sm text-gray-600 bg-white px-1 transition-all peer-placeholder-shown:top-2 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-focus:-top-2 peer-focus:text-sm peer-focus:text-gray-600">
+                    Sanctioned
+                </label>
+                </div>
+                <!-- Functional -->
+                <div class="input-container">
+                    <input type="number" id="nbsus-functional" class="w-full p-3 border border-gray-300 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="" oninput="updateFields('nbsus')" disabled>
+                    <label for="nbsus-functional"
+                        class="absolute left-3 -top-2 text-sm text-gray-600 bg-white px-1 transition-all peer-placeholder-shown:top-2 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-focus:-top-2 peer-focus:text-sm peer-focus:text-gray-600">
+                        Functional
+                    </label>
+                </div>
+            </div>
+
+            <!-- Non-Functional Container (displayed below Functional) -->
+            <div id="nbsus-non-functional-container" style="display: none;" class="mt-4">
+                <div class="flex items-center justify-end w-full">
+                    <label class="block text-sm text-black bg-orange-300 mb-1 p-2 inline-block rounded-md text-lg w-80% max-w-sm">
+                        Non-Functional: <span id="nbsus-non-functional-count" class="text-black text-sm">0</span>
+                    </label>
+                </div>
+            </div>
+        </div>
+
+        <!-- Nutritional Rehabilitation Centres / Malnutrition Treatment Centres Section -->
+        <div id="nutritional-rehabilitation-centres" class="bg-white rounded-lg shadow-md p-6 mb-4">
+            <h3 class="text-2xl font-semibold text-blue-600 mb-4">Nutritional Rehabilitation Centres / Malnutrition Treatment Centres</h3>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <!-- Sanctioned -->
+                <div class="input-container">
+                    <input type="number" id="nutritional-rehabilitation-centres-sanctioned" min="0" max="50" class="w-full p-3 border border-gray-300 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="" oninput="updateFields('nutritional-rehabilitation-centres')">
+                    <label for="nutritional-rehabilitation-centres-sanctioned"
+                    class="absolute left-3 -top-2 text-sm text-gray-600 bg-white px-1 transition-all peer-placeholder-shown:top-2 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-focus:-top-2 peer-focus:text-sm peer-focus:text-gray-600">
+                    Sanctioned
+                </label>
+                </div>
+                <!-- Functional -->
+                <div class="input-container">
+                    <input type="number" id="nutritional-rehabilitation-centres-functional" class="w-full p-3 border border-gray-300 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="" oninput="updateFields('nutritional-rehabilitation-centres')" disabled>
+                    <label for="nutritional-rehabilitation-centres-functional"
+                        class="absolute left-3 -top-2 text-sm text-gray-600 bg-white px-1 transition-all peer-placeholder-shown:top-2 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-focus:-top-2 peer-focus:text-sm peer-focus:text-gray-600">
+                        Functional
+                    </label>
+                </div>
+            </div>
+
+            <!-- Non-Functional Container (displayed below Functional) -->
+            <div id="nutritional-rehabilitation-centres-non-functional-container" style="display: none;" class="mt-4">
+                <div class="flex items-center justify-end w-full">
+                    <label class="block text-sm text-black bg-orange-300 mb-1 p-2 inline-block rounded-md text-lg w-80% max-w-sm">
+                        Non-Functional: <span id="nutritional-rehabilitation-centres-non-functional-count" class="text-black text-sm">0</span>
+                    </label>
+                </div>
+            </div>
+        </div>
+        <!-- Adolescent Friendly Health Clinics (AFHCs) Section -->
+        <div id="afhcs" class="bg-white rounded-lg shadow-md p-6 mb-4">
+            <h3 class="text-2xl font-semibold text-blue-600 mb-4">Adolescent Friendly Health Clinics (AFHCs)</h3>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <!-- Sanctioned -->
+                <div class="input-container">
+                    <input type="number" id="afhcs-sanctioned" min="0" max="100" class="w-full p-3 border border-gray-300 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="" oninput="updateFields('afhcs')">
+                    <label for="afhcs-sanctioned"
+                    class="absolute left-3 -top-2 text-sm text-gray-600 bg-white px-1 transition-all peer-placeholder-shown:top-2 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-focus:-top-2 peer-focus:text-sm peer-focus:text-gray-600">
+                    Sanctioned
+                </label>
+                </div>
+                <!-- Functional -->
+                <div class="input-container">
+                    <input type="number" id="afhcs-functional" class="w-full p-3 border border-gray-300 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="" oninput="updateFields('afhcs')" disabled>
+                    <label for="afhcs-functional"
+                        class="absolute left-3 -top-2 text-sm text-gray-600 bg-white px-1 transition-all peer-placeholder-shown:top-2 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-focus:-top-2 peer-focus:text-sm peer-focus:text-gray-600">
+                        Functional
+                    </label>
+                </div>
+            </div>
+
+            <!-- Non-Functional Container (displayed below Functional) -->
+            <div id="afhcs-non-functional-container" style="display: none;" class="mt-4">
+                <div class="flex items-center justify-end w-full">
+                    <label class="block text-sm text-black bg-orange-300 mb-1 p-2 inline-block rounded-md text-lg w-80% max-w-sm">
+                        Non-Functional: <span id="afhcs-non-functional-count" class="text-black text-sm">0</span>
+                    </label>
+                </div>
+            </div>
+        </div>
+
+        <!-- Blood Storage Unit (BSU) / Blood Bank (BB) Section -->
+        <div id="bsu-bb" class="bg-white rounded-lg shadow-md p-6 mb-4">
+            <h3 class="text-2xl font-semibold text-blue-600 mb-4">Blood Storage Unit (BSU) / Blood Bank (BB)</h3>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <!-- Sanctioned -->
+                <div class="input-container">
+                    <input type="number" id="bsu-bb-sanctioned" min="0" max="100" class="w-full p-3 border border-gray-300 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="" oninput="updateFields('bsu-bb')">
+                    <label for="bsu-bb-sanctioned"
+                    class="absolute left-3 -top-2 text-sm text-gray-600 bg-white px-1 transition-all peer-placeholder-shown:top-2 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-focus:-top-2 peer-focus:text-sm peer-focus:text-gray-600">
+                    Sanctioned
+                </label>
+                </div>
+                <!-- Functional -->
+                <div class="input-container">
+                    <input type="number" id="bsu-bb-functional" class="w-full p-3 border border-gray-300 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="" oninput="updateFields('bsu-bb')" disabled>
+                    <label for="bsu-bb-functional"
+                        class="absolute left-3 -top-2 text-sm text-gray-600 bg-white px-1 transition-all peer-placeholder-shown:top-2 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-focus:-top-2 peer-focus:text-sm peer-focus:text-gray-600">
+                        Functional
+                    </label>
+                </div>
+            </div>
+
+            <!-- Non-Functional Container (displayed below Functional) -->
+            <div id="bsu-bb-non-functional-container" style="display: none;" class="mt-4">
+                <div class="flex items-center justify-end w-full">
+                    <label class="block text-sm text-black bg-orange-300 mb-1 p-2 inline-block rounded-md text-lg w-80% max-w-sm">
+                        Non-Functional: <span id="bsu-bb-non-functional-count" class="text-black text-sm">0</span>
+                    </label>
+                </div>
+            </div>
+        </div>
+
+        <!-- Total number of delivery points in the Block -->
+        <h3 class="text-m font-semibold text-blue-600 mb-4">Total number of delivery points in the Block</h3>
+        <!-- <div class="grid grid-cols-1 sm:grid-cols-2 gap-4"> -->
+            <div class="input-container">
+                <input type="number" id="delivery-points" min="0" max="50" class="w-full p-3 border border-gray-300 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="" oninput="updateFields('delivery-points')">
+                <label for="delivery-points" class="absolute left-3 -top-2 text-sm text-gray-600 bg-white px-1 transition-all peer-placeholder-shown:top-2 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-focus:-top-2 peer-focus:text-sm peer-focus:text-gray-600">
+                    Enter
+                </label>
+            </div>
+
+        <!-- Total number of Ambulances at public health facilities -->
+        <h3 class="text-m font-semibold text-blue-600 mb-4">Total number of Ambulances at public health facilities</h3>
+            <div class="input-container">
+                <input type="number" id="ambulance-count" min="0" max="50" class="w-full p-3 border border-gray-300 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="" oninput="updateFields('ambulance-count')">
+                <label for="ambulance-count" class="absolute left-3 -top-2 text-sm text-gray-600 bg-white px-1 transition-all peer-placeholder-shown:top-2 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-focus:-top-2 peer-focus:text-sm peer-focus:text-gray-600">
+                    Enter
+                </label>
+            </div>
+
+            <!-- Total number of beds available at block public health facilities -->
+            <h3 class="text-m font-semibold text-blue-600 mb-4">Total number of beds available at block public health facilities</h3>
+            <div class="input-container">
+                <input type="number" id="beds-count" min="0" max="250" class="w-full p-3 border border-gray-300 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="" oninput="updateFields('beds-count')">
+                <label for="beds-count" class="absolute left-3 -top-2 text-sm text-gray-600 bg-white px-1 transition-all peer-placeholder-shown:top-2 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-focus:-top-2 peer-focus:text-sm peer-focus:text-gray-600">
+                    Enter
+                </label>
+            </div>
+
+            <!-- Total number of cold chain points in the Block -->
+            <h3 class="text-m font-semibold text-blue-600 mb-4">Total number of cold chain points in the Block</h3>
+            <div class="input-container">
+                <input type="number" id="cold-chain-points" min="0" max="100" class="w-full p-3 border border-gray-300 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="" oninput="updateFields('cold-chain-points')">
+                <label for="cold-chain-points" class="absolute left-3 -top-2 text-sm text-gray-600 bg-white px-1 transition-all peer-placeholder-shown:top-2 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-focus:-top-2 peer-focus:text-sm peer-focus:text-gray-600">
+                    Enter
+                </label>
+            </div>
+
+        
+
+        <!-- Navigation Buttons -->
+        <div class="flex justify-between mt-6">
+            <button class="px-6 py-2 bg-gray-300 text-gray-700 rounded-md hover:bg-gray-400">Back</button>
+            <button class="px-6 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600">Save & Next</button>
+        </div>
+     </div>
+
+    <!-- JavaScript -->
+    <script>
+        function updateFields(section) {
+            const sanctioned = document.getElementById(`${section}-sanctioned`).value || 0;
+            const functionalField = document.getElementById(`${section}-functional`);
+            const nonFunctionalCount = document.getElementById(`${section}-non-functional-count`);
+            const nonFunctionalContainer = document.getElementById(`${section}-non-functional-container`);
+
+            // Sanctioned input validation
+            if (section === 'medical-college' && (sanctioned < 0 || sanctioned > 20)) {
+                alert("Sanctioned field value must be between 0 and 20.");
+                return;
+            } else if ((section === 'district-hospital' || section === 'sub-district-hospital'  ) && (sanctioned < 0 || sanctioned > 5)) {
+                alert("Sanctioned field value must be between 0 and 5.");
+                return;
+            } else if ((section === 'community-health-centre' ) && (sanctioned < 0 || sanctioned > 25)) {
+                alert("Sanctioned field value must be between 0 and 25.");
+                return;
+            } else if ((section === 'phc' || section === 'chc' || section === 'sdh' || section === 'dh' || section === 'medical-college' || section === 'twenty-four-seven-aam-phc' || section === 'urban-primary-health-centre' || section === 'urban-primary-health-centre-aam' || section === 'sub-centre' || section === 'aam-sub-centre' || section === 'aam-urban-health-centre' || section === 'mch-wings' || section === 'sncus' || section === 'nbsus' || section === 'nutritional-rehabilitation-centres' || section === 'afhcs' || section === 'bsu-bb') && (sanctioned < 0 || sanctioned > 100)) {
+                alert("Sanctioned field value must be between 0 and 100.");
+                return;
+            } else if ((section === 'sncus' || section === 'nbsus' || section === 'nutritional-rehabilitation-centres' || section === 'afhcs' || section === 'bsu-bb') && (sanctioned < 0 || sanctioned > 50)) {
+                alert("Sanctioned field value must be between 0 and 50.");
+                return;
+            }
+
+            // Enable Functional input only if Sanctioned > 0
+            if (sanctioned > 0) {
+                functionalField.disabled = false;
+                functionalField.setAttribute("max", sanctioned); // Max value for Functional is equal to Sanctioned value
+            } else {
+                functionalField.disabled = true;
+                functionalField.value = ''; // Reset the value if disabled
+            }
+
+            // Ensure Functional does not exceed Sanctioned value
+            let functional = functionalField.value || 0;
+            if (functional > sanctioned) {
+                functional = sanctioned; // Set to Sanctioned value if exceeds
+                functionalField.value = functional;
+            }
+
+            // Update Non-Functional count based on Sanctioned and Functional values
+            const nonFunctional = sanctioned - functional;
+            if (functional > 0) {
+                nonFunctionalContainer.style.display = 'block';
+                nonFunctionalCount.textContent = nonFunctional > 0 ? nonFunctional : 0;
+            } else {
+                nonFunctionalContainer.style.display = 'none';
+                nonFunctionalCount.textContent = '0';
+            }
+        }
+    </script>
+</body>
+
+</html>
