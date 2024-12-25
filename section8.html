@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Key programmatic issues </title>
+</head>
+
+<body class="bg-gray-100 p-6 rounded-lg shadow-md mt-4">
+    <div class="container mx-auto p-4">
+        <form id="dataForm">
+            <!-- Header Section -->
+            <div id="section8" class="section bg-white p-6 rounded shadow-md mb-4">
+                <p class="text-m bg-gray-200 p-2 rounded-lg shadow-md mt-4"><span>&#8505; </span> identify and mark top 3 issues</p>
+                <p class="text-sm text-red-500 mb-4">* indicates a required question</p>
+                <div class="text-right">
+                    <span class="text-sm text-red-500 bg-gray-200 rounded-full px-2 py-1">8/8</span>
+                </div>
+
+
+                <!-- RMNCHA+N Programme Section --> 
+<div id="RMNCHA-section" class="bg-white p-6 rounded-lg shadow-md mt-4">
+    <h2 class="text-2xl font-semibold text-blue-600 mb-4">Reproductive, Maternal, Newborn, Child Health and Adolescent Health & Nutrition (RMNCHA+N) Programme</h2>
+
+    <!-- RMNCHA+N Section for Medical Officer -->
+    <div id="RMNCHA-MedicalOfficer-section" class="mb-4">
+        <div class="flex justify-between items-center">
+            <div class="text-gray-700 text-lg font-semibold">RMNCHA+N</div>
+            <button type="button" class="select-btn bg-blue-500 text-white px-4 py-2 rounded-lg"
+                data-title="RMNCHA+N Capacity Building (Medical Officer)"
+                data-options="Infrastructure (Facility structure),Supply and Demand (Pharmaceuticals and Laboratory),Fund Accessibility,Training,Logistics,Equipments,Human Resource"
+                data-target="RMNCHA-MedicalOfficer-selected-items">
+                Select
+            </button>
+        </div>
+        <div id="RMNCHA-MedicalOfficer-selected-items" class="selected-items flex mt-2 flex-wrap gap-2">
+        </div>
+    </div>
+</div>
+
+
+<!-- NTEP Programme Section --> 
+<div id="NTEP-section" class="bg-white p-6 rounded-lg shadow-md mt-4">
+    <h2 class="text-2xl font-semibold text-blue-600 mb-4">National Tuberculosis Elimination Programme (NTEP)</h2>
+
+    <!-- NTEP Section for Medical Officer -->
+    <div id="NTEP-MedicalOfficer-section" class="mb-4">
+        <div class="flex justify-between items-center">
+            <div class="text-gray-700 text-lg font-semibold">NTEP</div>
+            <button type="button" class="select-btn bg-blue-500 text-white px-4 py-2 rounded-lg"
+                data-title="NTEP Capacity Building (Medical Officer)"
+                data-options="Infrastructure (Facility structure),Supply and Demand (Pharmaceuticals and Laboratory),Fund Accessibility,Training,Logistics,Equipments,Human Resource"
+                data-target="NTEP-MedicalOfficer-selected-items">
+                Select
+            </button>
+        </div>
+        <div id="NTEP-MedicalOfficer-selected-items" class="selected-items flex mt-2 flex-wrap gap-2">
+        </div>
+    </div>
+</div>
+
+<!-- NCD Programme Section --> 
+<div id="NCD-section" class="bg-white p-6 rounded-lg shadow-md mt-4">
+    <h2 class="text-2xl font-semibold text-blue-600 mb-4">Non-Communicable Disease (NCD) Programme</h2>
+
+    <!-- NCD Section for Medical Officer -->
+    <div id="NCD-MedicalOfficer-section" class="mb-4">
+        <div class="flex justify-between items-center">
+            <div class="text-gray-700 text-lg font-semibold">NCD</div>
+            <button type="button" class="select-btn bg-blue-500 text-white px-4 py-2 rounded-lg"
+                data-title="NCD Capacity Building (Medical Officer)"
+                data-options="Infrastructure (Facility structure),Supply and Demand (Pharmaceuticals and Laboratory),Fund Accessibility,Training,Logistics,Equipments,Human Resource"
+                data-target="NCD-MedicalOfficer-selected-items">
+                Select
+            </button>
+        </div>
+        <div id="NCD-MedicalOfficer-selected-items" class="selected-items flex mt-2 flex-wrap gap-2">
+        </div>
+    </div>
+</div>
+
+<!-- Quality Assurance & Patient Safety Programme Section --> 
+<div id="QA-PatientSafety-section" class="bg-white p-6 rounded-lg shadow-md mt-4">
+    <h2 class="text-2xl font-semibold text-blue-600 mb-4">Quality Assurance & Patient Safety Programme</h2>
+
+    <!-- Quality Assurance & Patient Safety Section for Medical Officer -->
+    <div id="QA-PatientSafety-MedicalOfficer-section" class="mb-4">
+        <div class="flex justify-between items-center">
+            <div class="text-gray-700 text-lg font-semibold">Quality Assurance & Patient Safety</div>
+            <button type="button" class="select-btn bg-blue-500 text-white px-4 py-2 rounded-lg"
+                data-title="Quality Assurance & Patient Safety Capacity Building (Medical Officer)"
+                data-options="Infrastructure (Facility structure),Supply and Demand (Pharmaceuticals and Laboratory),Fund Accessibility,Training,Logistics,Equipments,Human Resource"
+                data-target="QA-PatientSafety-MedicalOfficer-selected-items">
+                Select
+            </button>
+        </div>
+        <div id="QA-PatientSafety-MedicalOfficer-selected-items" class="selected-items flex mt-2 flex-wrap gap-2">
+        </div>
+    </div>
+</div>
+
+<!-- CPHC Programme Section --> 
+<div id="CPHC-section" class="bg-white p-6 rounded-lg shadow-md mt-4">
+    <h2 class="text-2xl font-semibold text-blue-600 mb-4">Comprehensive Primary Healthcare (CPHC) through Ayushman Bharat Health & Wellness Centre</h2>
+
+    <!-- CPHC Section for Medical Officer -->
+    <div id="CPHC-MedicalOfficer-section" class="mb-4">
+        <div class="flex justify-between items-center">
+            <div class="text-gray-700 text-lg font-semibold">CPHC</div>
+            <button type="button" class="select-btn bg-blue-500 text-white px-4 py-2 rounded-lg"
+                data-title="CPHC Capacity Building (Medical Officer)"
+                data-options="Infrastructure (Facility structure),Supply and Demand (Pharmaceuticals and Laboratory),Fund Accessibility,Training,Logistics,Equipments,Human Resource"
+                data-target="CPHC-MedicalOfficer-selected-items">
+                Select
+            </button>
+        </div>
+        <div id="CPHC-MedicalOfficer-selected-items" class="selected-items flex mt-2 flex-wrap gap-2">
+        </div>
+    </div>
+</div>
+
+<!-- HSS Programme Section --> 
+<div id="HSS-section" class="bg-white p-6 rounded-lg shadow-md mt-4">
+    <h2 class="text-2xl font-semibold text-blue-600 mb-4">Overall Health System Strengthening (HSS) through NHM including Budget Utilization</h2>
+
+    <!-- HSS Section for Medical Officer -->
+    <div id="HSS-MedicalOfficer-section" class="mb-4">
+        <div class="flex justify-between items-center">
+            <div class="text-gray-700 text-lg font-semibold">Health System Strengthening (HSS)</div>
+            <button type="button" class="select-btn bg-blue-500 text-white px-4 py-2 rounded-lg"
+                data-title="HSS Capacity Building (Medical Officer)"
+                data-options="Infrastructure (Facility structure),Supply and Demand (Pharmaceuticals and Laboratory),Fund Accessibility,Training,Logistics,Equipments,Human Resource"
+                data-target="HSS-MedicalOfficer-selected-items">
+                Select
+            </button>
+        </div>
+        <div id="HSS-MedicalOfficer-selected-items" class="selected-items flex mt-2 flex-wrap gap-2">
+        </div>
+    </div>
+</div>
+
+
+<!-- NVBDCP Programme Section --> 
+<div id="NVBDCP-section" class="bg-white p-6 rounded-lg shadow-md mt-4">
+    <h2 class="text-2xl font-semibold text-blue-600 mb-4">National Vector Borne Disease Control Programme (NVBDCP)</h2>
+
+    <!-- NVBDCP Section for Medical Officer -->
+    <div id="NVBDCP-MedicalOfficer-section" class="mb-4">
+        <div class="flex justify-between items-center">
+            <div class="text-gray-700 text-lg font-semibold">NVBDCP</div>
+            <button type="button" class="select-btn bg-blue-500 text-white px-4 py-2 rounded-lg"
+                data-title="NVBDCP Capacity Building (Medical Officer)"
+                data-options="Infrastructure (Facility structure),Supply and Demand (Pharmaceuticals and Laboratory),Fund Accessibility,Training,Logistics,Equipments,Human Resource"
+                data-target="NVBDCP-MedicalOfficer-selected-items">
+                Select
+            </button>
+        </div>
+        <div id="NVBDCP-MedicalOfficer-selected-items" class="selected-items flex mt-2 flex-wrap gap-2">
+        </div>
+    </div>
+</div>
+
+
+                    <!-- RMNCHA+N Programme Section --> 
+<div id="RMNCHA-section" class="bg-white p-6 rounded-lg shadow-md mt-4">
+    <h2 class="text-2xl font-semibold text-blue-600 mb-4">Reproductive, Maternal, Newborn, Child Health and Adolescent Health & Nutrition (RMNCHA+N) Programme</h2>
+
+    <!-- RMNCHA+N Section for Medical Officer -->
+    <div id="RMNCHA-MedicalOfficer-section" class="mb-4">
+        <div class="flex justify-between items-center">
+            <div class="text-gray-700 text-lg font-semibold">RMNCHA+N</div>
+            <button type="button" class="select-btn bg-blue-500 text-white px-4 py-2 rounded-lg"
+                data-title="RMNCHA+N Capacity Building (Medical Officer)"
+                data-options="Infrastructure (Facility structure),Supply and Demand (Pharmaceuticals and Laboratory),Fund Accessibility,Training,Logistics,Equipments,Human Resource"
+                data-target="RMNCHA-MedicalOfficer-selected-items">
+                Select
+            </button>
+        </div>
+        <div id="RMNCHA-MedicalOfficer-selected-items" class="selected-items flex mt-2 flex-wrap gap-2">
+        </div>
+    </div>
+</div>
+
+ <!-- Immunization Programme Section --> 
+<div id="Immunization-section" class="bg-white p-6 rounded-lg shadow-md mt-4">
+    <h2 class="text-2xl font-semibold text-blue-600 mb-4">Immunization Programme</h2>
+
+    <!-- Immunization Section for Medical Officer -->
+    <div id="Immunization-MedicalOfficer-section" class="mb-4">
+        <div class="flex justify-between items-center">
+            <div class="text-gray-700 text-lg font-semibold">Immunization</div>
+            <button type="button" class="select-btn bg-blue-500 text-white px-4 py-2 rounded-lg"
+                data-title="Immunization Capacity Building (Medical Officer)"
+                data-options="Infrastructure (Facility structure),Supply and Demand (Pharmaceuticals and Laboratory),Fund Accessibility,Training,Logistics,Equipments,Human Resource"
+                data-target="Immunization-MedicalOfficer-selected-items">
+                Select
+            </button>
+        </div>
+        <div id="Immunization-MedicalOfficer-selected-items" class="selected-items flex mt-2 flex-wrap gap-2">
+        </div>
+    </div>
+</div>             
+
+    <script>
+        const selectBtns = document.querySelectorAll(".select-btn");
+        const modal = document.getElementById("modal");
+        const modalTitle = document.getElementById("modalTitle");
+        const modalOptions = document.getElementById("modalOptions");
+        const saveBtn = document.getElementById("saveBtn");
+        const resetBtn = document.getElementById("resetBtn");
+        let currentSelectedContainer = null;
+        const selectedItemsStore = {};
+
+        selectBtns.forEach(button => {
+            button.addEventListener("click", function () {
+                const title = this.getAttribute("data-title");
+                const options = this.getAttribute("data-options");
+                currentSelectedContainer = this.closest(".section").querySelector(`#${this.getAttribute("data-target")}`);
+                const previouslySelected = selectedItemsStore[title] || [];
+
+                modalTitle.textContent = title;
+                modalOptions.innerHTML = createCheckboxes(options, previouslySelected);
+                modal.classList.remove("hidden");
+            });
+        });
+
+        // Save Button Action
+        saveBtn.addEventListener("click", function () {
+            const selectedCheckboxes = Array.from(modalOptions.querySelectorAll("input:checked"));
+            const selectedValues = selectedCheckboxes.map(checkbox => checkbox.value);
+
+            // Store the selected values using the unique title
+            selectedItemsStore[modalTitle.textContent] = selectedValues;
+
+            // Display selected items in the UI
+            currentSelectedContainer.innerHTML = selectedValues.map(item => `<span class="px-2 py-1 bg-gray-300 rounded">${item} <span class="cursor-pointer" onclick="removeItem(this)">×</span></span>`).join("");
+
+            modal.classList.add("hidden");
+        });
+
+        // Reset Button Action
+        resetBtn.addEventListener("click", function () {
+            modalOptions.querySelectorAll("input").forEach(input => input.checked = false);
+        });
+
+        // Close Modal when clicking outside
+        modal.addEventListener("click", function (e) {
+            if (e.target === modal) {
+                modal.classList.add("hidden");
+            }
+        });
+
+        // Remove Selected Item
+        function removeItem(item) {
+            item.parentElement.remove();
+        }
+
+        function createCheckboxes(options, previouslySelected) {
+            const optionsList = options.split(",");
+            return optionsList.map(option => {
+                const checked = previouslySelected.includes(option.trim()) ? 'checked' : '';
+                return `<label class="flex items-center">
+                            <input type="checkbox" value="${option.trim()}" ${checked} class="mr-2">
+                            ${option.trim()}
+                        </label>`;
+            }).join("");
+        }
+    </script>
+</body>
+
+</html>
